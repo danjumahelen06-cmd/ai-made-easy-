@@ -3,7 +3,7 @@ import { useMasterclass } from "../context/MasterclassContext";
 import { MessageCircle, ArrowRight } from "lucide-react";
 
 export const MobileStickyBar: React.FC = () => {
-  const { getClickableWhatsAppUrl } = useMasterclass();
+  const { getClickableWhatsAppUrl, trackTikTokEvent } = useMasterclass();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -37,6 +37,7 @@ export const MobileStickyBar: React.FC = () => {
           href={getClickableWhatsAppUrl()}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackTikTokEvent("Contact")}
           className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 text-xs font-black text-stone-950 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 rounded-xl shadow-lg shadow-amber-500/30 active:scale-95 transition-transform uppercase tracking-wider"
         >
           <MessageCircle className="w-4 h-4 text-stone-950 fill-stone-950/20" />

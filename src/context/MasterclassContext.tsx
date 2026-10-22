@@ -25,6 +25,7 @@ interface MasterclassContextType {
   setIsSettingsOpen: (open: boolean) => void;
   toastMessage: string | null;
   showToast: (msg: string) => void;
+  trackTikTokEvent: (eventName?: string) => void;
 }
 
 const MasterclassContext = createContext<MasterclassContextType | undefined>(undefined);
@@ -141,6 +142,19 @@ export const MasterclassProvider: React.FC<{ children: ReactNode }> = ({ childre
     showToast("Reset testimonial gallery to clean placeholders.");
   };
 
+  const trackTikTokEvent = (eventName = "Contact") => {
+    try {
+      if (typeof window !== "undefined" && (window as unknown as { ttq?: { track: (e: string, p?: Record<string, unknown>) => void } }).ttq) {
+        (window as unknown as { ttq: { track: (e: string, p?: Record<string, unknown>) => void } }).ttq.track(eventName, {
+          content_name: "Join AI Video Creation Masterclass",
+          content_category: "WhatsApp Channel Access"
+        });
+      }
+    } catch {
+      // Safe no-op if adblocker or pixel not loaded
+    }
+  };
+
   return (
     <MasterclassContext.Provider
       value={{
@@ -159,7 +173,8 @@ export const MasterclassProvider: React.FC<{ children: ReactNode }> = ({ childre
         isSettingsOpen,
         setIsSettingsOpen,
         toastMessage,
-        showToast
+        showToast,
+        trackTikTokEvent
       }}
     >
       {children}
