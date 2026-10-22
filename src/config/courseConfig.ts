@@ -346,63 +346,200 @@ export interface TestimonialMediaPlaceholder {
   label: string;
   caption: string;
   authorLabel: string;
-  previewUrl?: string; // If user uploads a file, it stores the object URL
+  previewUrl?: string;
   accentColor: string;
+  badge?: string;
 }
 
 export const INITIAL_TESTIMONIAL_PLACEHOLDERS: TestimonialMediaPlaceholder[] = [
+  // 🎥 REAL STUDENT VIDEOS
   {
-    id: "tp-1",
+    id: "vid-1",
     type: "video",
     category: "student_project",
-    label: "Student AI Video: E-Commerce Perfume Advert",
-    caption: "Created entirely with free AI image-to-video tools & mobile CapCut editing by a course student.",
-    authorLabel: "[Placeholder: Student Video Project 1]",
-    accentColor: "from-purple-600/30 to-indigo-600/30"
+    label: "Animated Talking Fruits Advert (Watermelon & Mango)",
+    caption: "Created entirely with smartphone AI prompts, voiceover, and CapCut. A viral-ready commercial concept for juice brands and food businesses.",
+    authorLabel: "Student Video Project",
+    previewUrl: "/assets/aistudio/IMG_5435_51f14107.MP4",
+    accentColor: "from-amber-500/30 to-yellow-500/30",
+    badge: "Viral Ad Example"
   },
   {
-    id: "tp-2",
+    id: "vid-2",
     type: "video",
     category: "student_project",
-    label: "Student AI Video: Glowing Surreal Fruit Concept",
-    caption: "Demonstrating motion prompt control and vibrant cosmic fruit visuals learned in Module 8.",
-    authorLabel: "[Placeholder: Student Video Project 2]",
-    accentColor: "from-pink-600/30 to-rose-600/30"
+    label: "Husraj Herbal Ulcer Care Commercial",
+    caption: "Realistic product commercial made for a health brand, featuring high-converting product shots and voiceover created by a student.",
+    authorLabel: "Student Client Advert",
+    previewUrl: "/assets/aistudio/IMG_5502_0596e785.MP4",
+    accentColor: "from-emerald-500/30 to-teal-500/30",
+    badge: "Paid Client Work"
   },
   {
-    id: "tp-3",
+    id: "vid-3",
     type: "video",
     category: "video_review",
-    label: "Student Video Testimonial: Smartphone Experience",
-    caption: "Student sharing their experience learning AI video creation using only an Android smartphone.",
-    authorLabel: "[Placeholder: Video Testimonial 1]",
-    accentColor: "from-blue-600/30 to-cyan-600/30"
+    label: "Student Video Review: 'I Learned With Just My Phone!'",
+    caption: "Genuine video feedback from a student sharing how practical and easy the masterclass was to follow from day one without a laptop.",
+    authorLabel: "Student Video Testimonial",
+    previewUrl: "/assets/aistudio/IMG_4674_bc2df2e9.MOV",
+    accentColor: "from-yellow-500/30 to-amber-600/30",
+    badge: "Video Review"
   },
   {
-    id: "tp-4",
+    id: "vid-4",
+    type: "video",
+    category: "student_project",
+    label: "3D Herbal Product Packaging Video",
+    caption: "Multi-scene product advert with 3D medicine packaging, smooth transitions, and call-to-action created on a smartphone.",
+    authorLabel: "Student Product Video",
+    previewUrl: "/assets/aistudio/IMG_5503_d4b58da5.MP4",
+    accentColor: "from-orange-500/30 to-amber-500/30",
+    badge: "Product Showcase"
+  },
+  {
+    id: "vid-5",
+    type: "video",
+    category: "video_review",
+    label: "Student Feedback & Experience",
+    caption: "Another student sharing honest feedback on how the step-by-step smartphone method helped them start creating videos immediately.",
+    authorLabel: "Student Video Review",
+    previewUrl: "/assets/aistudio/IMG_2154_bde12826.MP4",
+    accentColor: "from-amber-600/30 to-yellow-600/30",
+    badge: "Student Review"
+  },
+  {
+    id: "vid-6",
+    type: "video",
+    category: "student_project",
+    label: "AI Talking Character Video Creation",
+    caption: "Realistic talking character with synchronized speech and expressive facial movements generated entirely on mobile.",
+    authorLabel: "Character Animation",
+    previewUrl: "/assets/aistudio/IMG_4671_67784918.MOV",
+    accentColor: "from-yellow-400/30 to-amber-500/30",
+    badge: "AI Avatar"
+  },
+  {
+    id: "vid-7",
+    type: "video",
+    category: "student_project",
+    label: "Creative AI Storytelling & Animation",
+    caption: "Cinematic character storytelling sequence showing creative visual prompts and atmospheric lighting learned in class.",
+    authorLabel: "Creative Animation",
+    previewUrl: "/assets/aistudio/IMG_4933__2__99e37020.MOV",
+    accentColor: "from-amber-500/30 to-orange-500/30",
+    badge: "Animation Reel"
+  },
+
+  // 💬 REAL WHATSAPP TESTIMONIAL SCREENSHOTS (ALL PHONE NUMBERS BLURRED)
+  {
+    id: "img-1",
     type: "screenshot",
     category: "chat_proof",
-    label: "WhatsApp Community Feedback Screenshot",
-    caption: "Screenshot of student message after successfully generating their first 3D advert video.",
-    authorLabel: "[Placeholder: WhatsApp Testimonial Screenshot 1]",
-    accentColor: "from-emerald-600/30 to-teal-600/30"
+    label: "3,100+ Views & 56 Likes on First Video!",
+    caption: "'Good morning guys... this is my first video... I decided to share on Facebook... it has reach 3.1k views and 56 likes!' (Student phone number blurred for privacy)",
+    authorLabel: "Facebook Milestone Proof",
+    previewUrl: "/assets/aistudio/photo_5967339497512964096_y_47920cce.jpg",
+    accentColor: "from-blue-600/30 to-amber-600/30",
+    badge: "3.1k Views"
   },
   {
-    id: "tp-5",
+    id: "img-2",
     type: "screenshot",
     category: "chat_proof",
-    label: "Social Media Result Screenshot",
-    caption: "Screenshot showing video view milestone or client feedback on AI advert delivered.",
-    authorLabel: "[Placeholder: Feedback Screenshot 2]",
-    accentColor: "from-violet-600/30 to-purple-600/30"
+    label: "Fashion Designer Advert for Wife's Business",
+    caption: "'My wife is a fashion designer, I created this advert for her and she loved it! Got orders for flyers and videos!'",
+    authorLabel: "Family Business Advert",
+    previewUrl: "/assets/aistudio/photo_5967339497512964084_y_8e514395.jpg",
+    accentColor: "from-purple-600/30 to-amber-600/30",
+    badge: "Client Orders"
   },
   {
-    id: "tp-6",
-    type: "photo",
-    category: "student_photo",
-    label: "Student Showcase Photo",
-    caption: "Space for student creator headshot or photo with their phone project in hand.",
-    authorLabel: "[Placeholder: Student Creator Photo]",
-    accentColor: "from-indigo-600/30 to-blue-600/30"
+    id: "img-3",
+    type: "screenshot",
+    category: "chat_proof",
+    label: "Client Loved the Herbal Product Advert",
+    caption: "'Check this advert I did for a client. What can I add to it?' Mentor feedback: 'Wow, this is beautiful!'",
+    authorLabel: "WhatsApp Feedback",
+    previewUrl: "/assets/aistudio/photo_5967339497512964085_y_b1c9622e.jpg",
+    accentColor: "from-emerald-600/30 to-amber-600/30",
+    badge: "Client Praise"
+  },
+  {
+    id: "img-4",
+    type: "screenshot",
+    category: "chat_proof",
+    label: "First Smartphone Video & Flyer Assignment",
+    caption: "'Rate me mama. I have an order of flyer and videos... I created this with my smartphone!' (Student phone number blurred for privacy)",
+    authorLabel: "Smartphone Assignment",
+    previewUrl: "/assets/aistudio/photo_5967339497512964082_y_5b1469b9.jpg",
+    accentColor: "from-amber-600/30 to-yellow-600/30",
+    badge: "Assignment Submission"
+  },
+  {
+    id: "img-5",
+    type: "screenshot",
+    category: "chat_proof",
+    label: "Fashion Sketches & Video Submission",
+    caption: "Student submitting fashion styling video project directly to the student mentoring community.",
+    authorLabel: "Fashion Styling Video",
+    previewUrl: "/assets/aistudio/photo_5967339497512964083_x_ec775e76.jpg",
+    accentColor: "from-pink-600/30 to-amber-600/30",
+    badge: "Fashion Ad"
+  },
+  {
+    id: "img-6",
+    type: "screenshot",
+    category: "student_project",
+    label: "AI Studio Podcast Video Creation",
+    caption: "Creating realistic studio interview and podcast talking visuals using mobile AI tools.",
+    authorLabel: "Podcast Video Creation",
+    previewUrl: "/assets/aistudio/photo_5967339497512964100_y_38e467b6.jpg",
+    accentColor: "from-indigo-600/30 to-amber-600/30",
+    badge: "Studio Visuals"
+  },
+  {
+    id: "img-7",
+    type: "screenshot",
+    category: "student_project",
+    label: "Cinematic Warrior AI Video Frame",
+    caption: "High-definition character generation with dramatic lighting and cinematic composition.",
+    authorLabel: "Cinematic Visuals",
+    previewUrl: "/assets/aistudio/photo_5967339497512964099_y_6314ea3c.jpg",
+    accentColor: "from-amber-700/30 to-yellow-600/30",
+    badge: "Cinematic Frame"
+  },
+  {
+    id: "img-8",
+    type: "screenshot",
+    category: "student_project",
+    label: "Fitness Gym Promotional Video Frame",
+    caption: "Fitness business video advert generated with AI motion dynamics for athletic branding.",
+    authorLabel: "Fitness Brand Advert",
+    previewUrl: "/assets/aistudio/photo_5967339497512964102_y_b2b2cac7.jpg",
+    accentColor: "from-red-600/30 to-amber-600/30",
+    badge: "Fitness Advert"
+  },
+  {
+    id: "img-9",
+    type: "screenshot",
+    category: "student_project",
+    label: "CapCut Mobile Video Timeline & Export",
+    caption: "Behind-the-scenes view of video timeline, audio tracks, and effects layered inside CapCut on smartphone.",
+    authorLabel: "Mobile Editing Workflow",
+    previewUrl: "/assets/aistudio/photo_5967339497512964098_y_0456956d.jpg",
+    accentColor: "from-cyan-600/30 to-amber-600/30",
+    badge: "CapCut Timeline"
+  },
+  {
+    id: "img-10",
+    type: "screenshot",
+    category: "student_project",
+    label: "Gourmet Food Advert Video Project",
+    caption: "Student assignment creating a mouth-watering commercial advert for food vendors and restaurants.",
+    authorLabel: "Food Commercial Project",
+    previewUrl: "/assets/aistudio/photo_5967339497512964101_y_0eec86d6.jpg",
+    accentColor: "from-yellow-600/30 to-amber-700/30",
+    badge: "Food Commercial"
   }
 ];
