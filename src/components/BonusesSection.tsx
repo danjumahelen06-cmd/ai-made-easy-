@@ -40,7 +40,7 @@ export const BonusesSection: React.FC = () => {
             YOU'LL GET MORE THAN JUST AI VIDEO LESSONS!
           </h2>
           <p className="text-amber-100/80 text-base sm:text-lg">
-            When you join the masterclass today for ₦2,000, you also unlock these 4 exclusive bonus resources to accelerate your creative workflow.
+            When you join the masterclass today, you also unlock these 4 exclusive bonus resources to accelerate your creative workflow.
           </p>
         </div>
 

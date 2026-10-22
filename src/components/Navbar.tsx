@@ -50,7 +50,7 @@ export const Navbar: React.FC = () => {
             className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-xs font-extrabold text-stone-950 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 rounded-xl hover:from-yellow-300 hover:to-amber-300 active:scale-95 transition-all shadow-md shadow-amber-500/20 whitespace-nowrap shrink-0 uppercase tracking-wider"
           >
             <MessageCircle className="w-4 h-4 text-stone-950 fill-stone-950/20" />
-            <span>Join for ₦2,000</span>
+            <span>Join Masterclass</span>
             <ArrowUpRight className="w-3.5 h-3.5 opacity-80" />
           </a>
 
@@ -88,7 +88,7 @@ export const Navbar: React.FC = () => {
               className="w-full flex items-center justify-center gap-2 py-3 text-sm font-extrabold text-stone-950 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-xl shadow-lg shadow-amber-500/30 uppercase tracking-wider"
             >
               <MessageCircle className="w-4 h-4 text-stone-950" />
-              <span>Join Masterclass for ₦2,000</span>
+              <span>Join Masterclass Now</span>
             </a>
           </div>
         </div>

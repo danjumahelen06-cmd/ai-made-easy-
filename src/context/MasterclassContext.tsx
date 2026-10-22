@@ -75,7 +75,7 @@ export const MasterclassProvider: React.FC<{ children: ReactNode }> = ({ childre
   const getClickableWhatsAppUrl = (): string => {
     if (!whatsappUrl || whatsappUrl === "YOUR_WHATSAPP_CHANNEL_LINK") {
       // Default friendly WhatsApp prefilled link with clear masterclass greeting
-      return "https://wa.me/?text=Hello!%20I%20want%20to%20join%20the%20AI%20Video%20Creation%20Masterclass%20for%20%E2%82%A62,000.";
+      return "https://wa.me/?text=Hello!%20I%20want%20to%20join%20the%20AI%20Video%20Creation%20Masterclass.";
     }
     // If user provided a link like "wa.me/xxx" without http
     if (!whatsappUrl.startsWith("http://") && !whatsappUrl.startsWith("https://")) {

@@ -17,10 +17,10 @@ export interface CourseConfig {
 
 export const COURSE_CONFIG: CourseConfig = {
   name: "AI Video Creation Masterclass",
-  price: "₦2,000",
-  priceRaw: 2000,
-  currency: "₦",
-  pricingType: "One-Time Payment",
+  price: "Instant Access",
+  priceRaw: 0,
+  currency: "",
+  pricingType: "One-Time Access",
   // Official WhatsApp channel link
   whatsappLink: "https://whatsapp.com/channel/0029Vb8Y3NSDuMRfGqJZY61T",
 };
@@ -209,8 +209,8 @@ export const WHY_JOIN_DATA: WhyJoinItem[] = [
   },
   {
     id: 5,
-    title: "Instant Access After Payment",
-    description: "Gain immediate entry to the course material and student group as soon as your payment of ₦2,000 is confirmed.",
+    title: "Instant Access After Joining",
+    description: "Gain immediate entry to the course material and student group as soon as you enroll.",
     iconName: "Zap"
   },
   {
@@ -319,8 +319,8 @@ export const FAQS_DATA: FaqItem[] = [
   },
   {
     id: 6,
-    question: "Will you really teach everything listed for just ₦2,000?",
-    answer: "Yes. The masterclass is priced at ₦2,000 to make these AI content creation lessons accessible to more beginners."
+    question: "Will you really teach everything listed in the masterclass?",
+    answer: "Yes. The masterclass is designed step by step so beginners can easily follow and start creating engaging AI videos immediately."
   },
   {
     id: 7,
@@ -480,12 +480,34 @@ export const INITIAL_TESTIMONIAL_PLACEHOLDERS: TestimonialMediaPlaceholder[] = [
     id: "img-5",
     type: "screenshot",
     category: "chat_proof",
-    label: "Fashion Sketches & Video Submission",
-    caption: "Student submitting fashion styling video project directly to the student mentoring community.",
-    authorLabel: "Fashion Styling Video",
+    label: "Student Feedback: 'Congrats on your first video!'",
+    caption: "Student chat celebrating first video project completion: 'Congrats on your first video 🎉👏 Keep practicing!' with encouraging mentorship in WhatsApp.",
+    authorLabel: "Student WhatsApp Chat",
     previewUrl: "/assets/aistudio/photo_5967339497512964083_x_ec775e76.jpg",
     accentColor: "from-pink-600/30 to-amber-600/30",
-    badge: "Fashion Ad"
+    badge: "Student Testimony"
+  },
+  {
+    id: "img-7",
+    type: "screenshot",
+    category: "chat_proof",
+    label: "Student Testimony: 'My Own Video, I Will Drop Full Movie Soon!'",
+    caption: "Student chat sharing their African Warrior AI cinematic animation in the community group: 'My own video, 🔥😊 I will drop full movie soon' and receiving congratulations!",
+    authorLabel: "Student Group Chat",
+    previewUrl: "/assets/aistudio/photo_5967339497512964099_y_6314ea3c.jpg",
+    accentColor: "from-amber-700/30 to-yellow-600/30",
+    badge: "Student Testimony"
+  },
+  {
+    id: "img-8",
+    type: "screenshot",
+    category: "chat_proof",
+    label: "Student Testimony: 'Guys Rate My Video' (Lagos Fitness Hub)",
+    caption: "Student submitting their commercial gym advert: 'Guys rate my video' and receiving instant love and praise from fellow members!",
+    authorLabel: "Student Review Chat",
+    previewUrl: "/assets/aistudio/photo_5967339497512964102_y_b2b2cac7.jpg",
+    accentColor: "from-red-600/30 to-amber-600/30",
+    badge: "Student Testimony"
   },
   {
     id: "img-6",
@@ -497,28 +519,6 @@ export const INITIAL_TESTIMONIAL_PLACEHOLDERS: TestimonialMediaPlaceholder[] = [
     previewUrl: "/assets/aistudio/photo_5967339497512964100_y_38e467b6.jpg",
     accentColor: "from-indigo-600/30 to-amber-600/30",
     badge: "Studio Visuals"
-  },
-  {
-    id: "img-7",
-    type: "screenshot",
-    category: "student_project",
-    label: "Cinematic Warrior AI Video Frame",
-    caption: "High-definition character generation with dramatic lighting and cinematic composition.",
-    authorLabel: "Cinematic Visuals",
-    previewUrl: "/assets/aistudio/photo_5967339497512964099_y_6314ea3c.jpg",
-    accentColor: "from-amber-700/30 to-yellow-600/30",
-    badge: "Cinematic Frame"
-  },
-  {
-    id: "img-8",
-    type: "screenshot",
-    category: "student_project",
-    label: "Fitness Gym Promotional Video Frame",
-    caption: "Fitness business video advert generated with AI motion dynamics for athletic branding.",
-    authorLabel: "Fitness Brand Advert",
-    previewUrl: "/assets/aistudio/photo_5967339497512964102_y_b2b2cac7.jpg",
-    accentColor: "from-red-600/30 to-amber-600/30",
-    badge: "Fitness Advert"
   },
   {
     id: "img-9",

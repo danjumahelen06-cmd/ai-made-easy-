@@ -49,17 +49,17 @@ export const OfferSection: React.FC = () => {
             You do not need to figure everything out alone. Learn step by step, explore creative AI tools, and start practicing your own AI videos at your pace.
           </p>
 
-          {/* Prominent Price Tag */}
+          {/* Instant Enrollment Badge */}
           <div className="my-8 py-5 px-6 rounded-2xl bg-[#170E09] border-2 border-amber-500/40 max-w-md mx-auto shadow-xl">
             <div className="text-xs uppercase tracking-wider text-amber-300 font-bold mb-1">
-              One-Time Enrollment Fee
+              Masterclass Enrollment
             </div>
-            <div className="text-4xl sm:text-5xl font-black text-yellow-400 tracking-tight">
-              ₦2,000
+            <div className="text-3xl sm:text-4xl font-black text-yellow-400 tracking-tight uppercase">
+              Instant Access
             </div>
             <div className="text-xs text-amber-200/70 mt-1.5 flex items-center justify-center gap-2">
               <InfinityIcon className="w-3.5 h-3.5 text-yellow-400" />
-              <span>ONE-TIME PAYMENT · NO RECURRING CHARGES</span>
+              <span>LIFETIME ACCESS · FUTURE UPDATES INCLUDED</span>
             </div>
           </div>
 
@@ -79,10 +79,10 @@ export const OfferSection: React.FC = () => {
               href={getClickableWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-black text-stone-950 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 rounded-xl hover:from-yellow-300 hover:to-amber-300 active:scale-[0.98] transition-all shadow-xl shadow-amber-500/35 group tracking-wide uppercase"
+              className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-black text-stone-950 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 rounded-xl hover:from-yellow-300 hover:to-amber-300 active:scale-[0.98] transition-all shadow-xl shadow-amber-500/35 group tracking-wide uppercase cursor-pointer"
             >
               <MessageCircle className="w-5 h-5 text-stone-950 fill-stone-950/20 group-hover:scale-110 transition-transform" />
-              <span>I'M READY TO JOIN — ₦2,000</span>
+              <span>I'M READY TO JOIN NOW</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
 

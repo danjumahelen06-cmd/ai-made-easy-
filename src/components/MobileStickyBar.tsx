@@ -26,10 +26,10 @@ export const MobileStickyBar: React.FC = () => {
       <div className="flex items-center justify-between gap-3 max-w-md mx-auto">
         <div className="flex flex-col">
           <span className="text-[10px] text-amber-300 uppercase tracking-wider font-bold">
-            One-time Access
+            Masterclass
           </span>
-          <span className="text-xl font-black text-yellow-400 tracking-tight leading-none">
-            ₦2,000
+          <span className="text-sm font-black text-yellow-400 tracking-tight leading-tight">
+            Instant Access
           </span>
         </div>
 

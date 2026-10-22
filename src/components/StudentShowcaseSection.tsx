@@ -177,7 +177,7 @@ export const StudentShowcaseSection: React.FC = () => {
             }`}
           >
             <MessageSquare className="w-3.5 h-3.5" />
-            <span>WhatsApp Testimonials ({chatCount})</span>
+            <span>Student Testimonies ({chatCount})</span>
           </button>
           <button
             type="button"
@@ -327,7 +327,7 @@ export const StudentShowcaseSection: React.FC = () => {
             Ready to Start Creating Videos Like These?
           </h3>
           <p className="text-sm text-amber-100/80 mb-5 max-w-xl mx-auto">
-            You don't need a high-end laptop or prior skills. Join hundreds of students already learning on smartphone for just <strong>₦2,000</strong>.
+            You don't need a high-end laptop or prior skills. Join hundreds of students already learning on smartphone.
           </p>
           <a
             href={getClickableWhatsAppUrl()}
@@ -335,7 +335,7 @@ export const StudentShowcaseSection: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-stone-950 font-black text-sm uppercase tracking-wider rounded-xl shadow-lg shadow-amber-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
           >
-            <span>JOIN THE MASTERCLASS NOW — ₦2,000</span>
+            <span>JOIN THE MASTERCLASS NOW</span>
             <ExternalLink className="w-4 h-4" />
           </a>
         </div>
@@ -443,7 +443,7 @@ export const StudentShowcaseSection: React.FC = () => {
                 rel="noopener noreferrer"
                 className="px-5 py-2.5 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-stone-950 font-black text-xs uppercase tracking-wider rounded-xl shadow-md transition-all cursor-pointer whitespace-nowrap shrink-0 flex items-center gap-1.5"
               >
-                <span>Join for ₦2,000</span>
+                <span>Join Masterclass</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>

@@ -66,18 +66,18 @@ export const HeroSection: React.FC = () => {
               ))}
             </div>
 
-            {/* Price Callout Banner */}
+            {/* Instant Access Banner */}
             <div className="mb-6 p-4 rounded-xl bg-gradient-to-r from-[#1C140E] to-[#2B1D12] border-2 border-amber-500/40 w-full max-w-xl flex items-center justify-between shadow-xl">
               <div>
                 <span className="text-xs uppercase tracking-wider text-amber-300 font-bold block">
-                  Limited One-Time Enrollment
+                  Instant Access
                 </span>
                 <span className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                  JOIN TODAY FOR JUST <span className="text-yellow-400">₦2,000</span>
+                  JOIN THE <span className="text-yellow-400">MASTERCLASS TODAY</span>
                 </span>
               </div>
               <div className="hidden sm:block text-right">
-                <span className="text-xs text-amber-200/60 block">Single payment</span>
+                <span className="text-xs text-amber-200/60 block">Self-paced learning</span>
                 <span className="text-xs font-semibold text-yellow-300">Lifetime access included</span>
               </div>
             </div>
@@ -88,17 +88,17 @@ export const HeroSection: React.FC = () => {
                 href={getClickableWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base sm:text-lg font-black text-stone-950 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 rounded-xl hover:from-yellow-300 hover:to-amber-300 active:scale-[0.98] transition-all shadow-xl shadow-amber-500/30 group tracking-wide uppercase"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base sm:text-lg font-black text-stone-950 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 rounded-xl hover:from-yellow-300 hover:to-amber-300 active:scale-[0.98] transition-all shadow-xl shadow-amber-500/30 group tracking-wide uppercase cursor-pointer"
               >
                 <MessageCircle className="w-5 h-5 text-stone-950 fill-stone-950/20 group-hover:scale-110 transition-transform" />
                 <span>JOIN THE MASTERCLASS NOW</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
 
-              {/* Exact Supporting Line */}
+              {/* Supporting Line */}
               <p className="text-xs sm:text-sm text-amber-200/70 flex items-center gap-2">
                 <Zap className="w-4 h-4 text-yellow-400 shrink-0" />
-                <span>Instant access after payment. Learn anytime, anywhere.</span>
+                <span>Instant access after joining. Learn anytime, anywhere.</span>
               </p>
             </div>
 

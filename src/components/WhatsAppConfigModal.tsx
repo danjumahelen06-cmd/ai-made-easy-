@@ -35,7 +35,7 @@ export const WhatsAppConfigModal: React.FC = () => {
   const handlePhoneApply = () => {
     if (!phoneQuickInput) return;
     const cleaned = phoneQuickInput.replace(/[^0-9]/g, "");
-    const waUrl = `https://wa.me/${cleaned}?text=Hello!%20I%20want%20to%20join%20the%20AI%20Video%20Creation%20Masterclass%20for%20%E2%82%A62,000.`;
+    const waUrl = `https://wa.me/${cleaned}?text=Hello!%20I%20want%20to%20join%20the%20AI%20Video%20Creation%20Masterclass.`;
     setInputUrl(waUrl);
     setWhatsappUrl(waUrl);
     setPhoneQuickInput("");
