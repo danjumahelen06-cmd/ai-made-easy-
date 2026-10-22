@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #120D0A;
+  color: #FDF8F3;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Custom Yellow & Brown Glow Utilities */
+.glow-gold {
+  box-shadow: 0 0 50px -10px rgba(245, 158, 11, 0.35);
+}
+
+.glow-amber {
+  box-shadow: 0 0 45px -8px rgba(217, 119, 6, 0.28);
+}
+
+.glow-brown {
+  box-shadow: 0 10px 40px -10px rgba(26, 18, 11, 0.85);
+}
+
+/* Warm radial background accents */
+.bg-grid-warm {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(245, 158, 11, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(245, 158, 11, 0.04) 1px, transparent 1px);
+}

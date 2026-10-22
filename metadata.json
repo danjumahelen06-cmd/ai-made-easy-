@@ -1,0 +1,6 @@
+{
+  "name": "AI Video Creation Masterclass",
+  "description": "High-converting landing page for the AI Video Creation Masterclass. Learn how to create stunning AI videos, adverts, and images with just your smartphone.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
