@@ -3,14 +3,14 @@ import { useMasterclass } from "../context/MasterclassContext";
 import { Menu, X, ArrowUpRight, MessageCircle } from "lucide-react";
 
 export const Navbar: React.FC = () => {
-  const { getClickableWhatsAppUrl, setIsSettingsOpen } = useMasterclass();
+  const { getClickableWhatsAppUrl, trackTikTokEvent } = useMasterclass();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
     { label: "Curriculum", href: "#curriculum" },
+    { label: "Showcase", href: "#student-showcase" },
     { label: "Bonuses", href: "#bonuses" },
-    { label: "Student Showcase", href: "#student-showcase" },
-    { label: "Why Join", href: "#why-join" },
+    { label: "How It Works", href: "#how-it-works" },
     { label: "FAQs", href: "#faqs" },
   ];
 
@@ -47,6 +47,7 @@ export const Navbar: React.FC = () => {
             href={getClickableWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackTikTokEvent("Contact")}
             className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-xs font-extrabold text-stone-950 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 rounded-xl hover:from-yellow-300 hover:to-amber-300 active:scale-95 transition-all shadow-md shadow-amber-500/20 whitespace-nowrap shrink-0 uppercase tracking-wider"
           >
             <MessageCircle className="w-4 h-4 text-stone-950 fill-stone-950/20" />
@@ -84,7 +85,10 @@ export const Navbar: React.FC = () => {
               href={getClickableWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => {
+                trackTikTokEvent("Contact");
+                setMobileMenuOpen(false);
+              }}
               className="w-full flex items-center justify-center gap-2 py-3 text-sm font-extrabold text-stone-950 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-xl shadow-lg shadow-amber-500/30 uppercase tracking-wider"
             >
               <MessageCircle className="w-4 h-4 text-stone-950" />

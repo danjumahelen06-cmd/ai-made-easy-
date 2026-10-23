@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useMasterclass } from "../context/MasterclassContext";
-import { MessageCircle, ArrowRight, Sparkles, Shield, Lock, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 export const FinalSection: React.FC = () => {
   const { getClickableWhatsAppUrl } = useMasterclass();
@@ -8,60 +8,6 @@ export const FinalSection: React.FC = () => {
 
   return (
     <>
-      <section className="py-20 md:py-28 bg-[#150F0B] relative border-t border-amber-900/30 overflow-hidden">
-        {/* Ambient lighting */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-amber-500/10 blur-[130px] rounded-full pointer-events-none" />
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          
-          <div className="inline-flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider mb-3">
-            <Sparkles className="w-4 h-4 text-yellow-400" />
-            <span>Begin Today</span>
-          </div>
-
-          {/* Exact Required Heading */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-6">
-            IT'S TIME TO START CREATING!
-          </h2>
-
-          {/* Exact Required Body Copy */}
-          <p className="text-amber-100/80 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-4">
-            Your first AI video does not have to be perfect. Start learning, practice the steps, experiment with creative ideas, and improve as you go.
-          </p>
-
-          <p className="text-[#FDF8F3] font-bold text-lg sm:text-xl max-w-2xl mx-auto mb-8">
-            Join the AI Video Creation Masterclass today and start exploring what you can create with AI.
-          </p>
-
-          {/* CTA Button */}
-          <div className="space-y-4 max-w-md mx-auto">
-            <a
-              href={getClickableWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 text-base sm:text-lg font-black text-stone-950 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 rounded-xl hover:from-yellow-300 hover:to-amber-300 active:scale-[0.98] transition-all shadow-xl shadow-amber-500/30 group tracking-wide uppercase cursor-pointer"
-            >
-              <MessageCircle className="w-5 h-5 text-stone-950 fill-stone-950/20 group-hover:scale-110 transition-transform" />
-              <span>JOIN THE MASTERCLASS NOW</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-
-            <div className="flex items-center justify-center gap-4 text-xs text-amber-200/70">
-              <span className="flex items-center gap-1">
-                <Shield className="w-3.5 h-3.5 text-yellow-400" />
-                <span>Self-Paced Learning</span>
-              </span>
-              <span aria-hidden="true" className="text-amber-900">·</span>
-              <span className="flex items-center gap-1">
-                <Lock className="w-3.5 h-3.5 text-yellow-400" />
-                <span>Lifetime Masterclass Access</span>
-              </span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
       {/* Clean Footer */}
       <footer className="bg-[#0E0906] border-t border-amber-900/30 py-10 text-xs text-amber-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">

@@ -1,12 +1,9 @@
 import React, { useState, useRef } from "react";
-import { useMasterclass } from "../context/MasterclassContext";
 import { 
   Play, 
   Pause, 
   Volume2, 
   VolumeX, 
-  Upload, 
-  RotateCcw, 
   Maximize2,
   Film,
   Sparkles,
@@ -59,28 +56,13 @@ const HERO_VIDEO_PRESETS: VideoPreset[] = [
 ];
 
 export const HeroVideoPlayer: React.FC = () => {
-  const { 
-    heroVideo, 
-    uploadHeroVideo, 
-    resetHeroVideo 
-  } = useMasterclass();
-
   const [activePresetId, setActivePresetId] = useState<string>("fruits_ad");
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
-  const fileInputRef = useRef<HTMLInputElement>(null);
   const videoElementRef = useRef<HTMLVideoElement>(null);
 
   const activePreset = HERO_VIDEO_PRESETS.find(p => p.id === activePresetId) || HERO_VIDEO_PRESETS[0];
-  const currentVideoSrc = heroVideo.customVideoUrl || activePreset.src;
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      const file = e.target.files[0];
-      uploadHeroVideo(file);
-      setIsPlaying(true);
-    }
-  };
+  const currentVideoSrc = activePreset.src;
 
   const togglePlay = () => {
     if (!videoElementRef.current) return;
@@ -101,9 +83,6 @@ export const HeroVideoPlayer: React.FC = () => {
 
   const handlePresetChange = (presetId: string) => {
     setActivePresetId(presetId);
-    if (heroVideo.customVideoUrl) {
-      resetHeroVideo();
-    }
     setIsPlaying(true);
     setTimeout(() => {
       if (videoElementRef.current) {
@@ -134,45 +113,16 @@ export const HeroVideoPlayer: React.FC = () => {
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
           </div>
           <span className="text-xs font-mono text-amber-200/80 pl-2 truncate max-w-[180px] sm:max-w-xs">
-            {heroVideo.customVideoUrl 
-              ? heroVideo.fileName || `uploaded_custom_video.mp4`
-              : `${activePreset.id}_smartphone_render.mp4`}
+            {activePreset.label} · Mobile AI
           </span>
           <span className="hidden sm:inline-block px-2 py-0.5 rounded bg-amber-950/80 border border-amber-500/30 text-[10px] font-bold text-yellow-300 uppercase tracking-wider">
-            {heroVideo.customVideoUrl ? "Custom Video" : activePreset.badge}
+            {activePreset.badge}
           </span>
         </div>
 
-        {/* Upload replacement trigger */}
-        <div className="flex items-center gap-2">
-          <input 
-            type="file" 
-            ref={fileInputRef} 
-            onChange={handleFileChange} 
-            accept="video/*" 
-            className="hidden" 
-          />
-          <button
-            type="button"
-            onClick={() => fileInputRef.current?.click()}
-            className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold text-yellow-300 bg-amber-950/80 hover:bg-amber-900 border border-amber-500/40 rounded-lg transition-colors cursor-pointer"
-            title="Upload your own MP4 or MOV video"
-          >
-            <Upload className="w-3 h-3 text-yellow-400" />
-            <span className="hidden sm:inline">Replace Video</span>
-            <span className="sm:hidden">Upload</span>
-          </button>
-
-          {heroVideo.customVideoUrl && (
-            <button
-              type="button"
-              onClick={resetHeroVideo}
-              className="p-1 text-amber-300 hover:text-white rounded hover:bg-white/5 cursor-pointer"
-              title="Reset to student demo videos"
-            >
-              <RotateCcw className="w-3.5 h-3.5" />
-            </button>
-          )}
+        <div className="flex items-center gap-1.5 text-xs text-amber-300 font-semibold px-2.5 py-1 rounded-lg bg-amber-950/60 border border-amber-500/20">
+          <Sparkles className="w-3.5 h-3.5 text-yellow-400" />
+          <span>Student Project</span>
         </div>
       </div>
 
@@ -221,7 +171,7 @@ export const HeroVideoPlayer: React.FC = () => {
 
         <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
           {HERO_VIDEO_PRESETS.map((preset) => {
-            const isActive = !heroVideo.customVideoUrl && activePresetId === preset.id;
+            const isActive = activePresetId === preset.id;
             return (
               <button
                 key={preset.id}

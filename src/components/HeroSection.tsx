@@ -9,57 +9,89 @@ import {
   Sparkles, 
   ShieldCheck, 
   Zap,
-  Clock
+  Clock,
+  Video,
+  Users
 } from "lucide-react";
 
 export const HeroSection: React.FC = () => {
   const { getClickableWhatsAppUrl, trackTikTokEvent } = useMasterclass();
 
   const heroBenefits = [
-    "Beginner-friendly lessons.",
-    "Learn with your smartphone.",
-    "Explore free AI tools.",
-    "Learn at your own pace.",
-    "Lifetime course access."
+    "Beginner-friendly lessons starting from square one.",
+    "Learn with your smartphone — no laptop or camera needed.",
+    "Master free AI tools and professional CapCut editing.",
+    "Learn at your own pace with 24/7 lifetime access.",
+    "Supportive student community for reviews & feedback."
+  ];
+
+  const trustMetrics = [
+    {
+      label: "Device",
+      value: "100% Smartphone",
+      detail: "Android & iPhone Compatible",
+      icon: Smartphone
+    },
+    {
+      label: "Format",
+      value: "10 Video Modules",
+      detail: "Scripting to CapCut Editing",
+      icon: Video
+    },
+    {
+      label: "Access",
+      value: "Lifetime Access",
+      detail: "Self-Paced · Zero Expiration",
+      icon: Clock
+    },
+    {
+      label: "Community",
+      value: "Student Group",
+      detail: "Mentorship & Video Feedback",
+      icon: Users
+    }
   ];
 
   return (
-    <section className="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-grid-warm">
+    <section className="relative pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden bg-grid-warm">
       {/* Background ambient lighting glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[380px] bg-amber-500/15 blur-[130px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/3 left-1/4 w-[350px] h-[300px] bg-yellow-500/10 blur-[110px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/2 right-10 w-[300px] h-[300px] bg-orange-700/15 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-amber-500/15 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 w-[400px] h-[320px] bg-yellow-500/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 right-10 w-[350px] h-[350px] bg-orange-700/15 blur-[110px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        {/* Main 2-Column Split */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center mb-16">
           
-          {/* Left Column: Copy, Price & Primary Action */}
+          {/* Left Column: Copy, Instant Access & Primary CTA */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
-            {/* Meta indicator (clean unboxed text per constitution) */}
-            <div className="flex items-center gap-2 text-xs font-bold text-amber-400 tracking-wider uppercase mb-4">
+            
+            {/* Meta indicator */}
+            <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-amber-400 tracking-wider uppercase mb-4">
               <span>Mobile-First Masterclass</span>
               <span aria-hidden="true" className="text-amber-800">·</span>
-              <span>100% Smartphone Friendly</span>
+              <span>No Tech Experience Needed</span>
               <span aria-hidden="true" className="text-amber-800">·</span>
               <span>Instant Access</span>
             </div>
 
-            {/* Exact Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.15] tracking-tight mb-5 text-balance">
+            {/* Headline */}
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.12] tracking-tight mb-5 text-balance">
               CREATE AMAZING AI VIDEOS WITH JUST YOUR SMARTPHONE — <span className="bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-200 bg-clip-text text-transparent">EVEN IF YOU'RE A COMPLETE BEGINNER!</span>
             </h1>
 
-            {/* Exact Subheadline */}
+            {/* Subheadline */}
             <p className="text-base sm:text-lg text-amber-100/80 leading-relaxed mb-6 max-w-2xl">
               Learn how to create stunning AI images, engaging videos, animated adverts, AI music, and more with simple, beginner-friendly steps. No previous experience is required.
             </p>
 
-            {/* Exact Benefits List */}
-            <div className="space-y-2.5 mb-8 w-full max-w-xl">
+            {/* Benefits Checklist */}
+            <div className="space-y-2.5 mb-7 w-full max-w-xl">
               {heroBenefits.map((benefit, idx) => (
                 <div key={idx} className="flex items-center gap-3 text-sm sm:text-base text-[#FDF8F3]">
                   <div className="w-5 h-5 rounded-full bg-amber-500/20 text-yellow-400 flex items-center justify-center shrink-0">
-                    <CheckCircle2 className="w-4 h-4" />
+                    <CheckCircle2 className="w-3.5 h-3.5" />
                   </div>
                   <span>{benefit}</span>
                 </div>
@@ -67,17 +99,17 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Instant Access Banner */}
-            <div className="mb-6 p-4 rounded-xl bg-gradient-to-r from-[#1C140E] to-[#2B1D12] border-2 border-amber-500/40 w-full max-w-xl flex items-center justify-between shadow-xl">
+            <div className="mb-6 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#1E140D] via-[#281A10] to-[#1E140D] border-2 border-amber-500/40 w-full max-w-xl flex items-center justify-between shadow-2xl">
               <div>
-                <span className="text-xs uppercase tracking-wider text-amber-300 font-bold block">
-                  Instant Access
+                <span className="text-[11px] uppercase tracking-wider text-amber-300 font-bold block">
+                  Masterclass Enrollment
                 </span>
                 <span className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                  JOIN THE <span className="text-yellow-400">MASTERCLASS TODAY</span>
+                  JOIN ON <span className="text-yellow-400">WHATSAPP TODAY</span>
                 </span>
               </div>
               <div className="hidden sm:block text-right">
-                <span className="text-xs text-amber-200/60 block">Self-paced learning</span>
+                <span className="text-xs text-amber-200/70 block">Self-paced learning</span>
                 <span className="text-xs font-semibold text-yellow-300">Lifetime access included</span>
               </div>
             </div>
@@ -89,7 +121,7 @@ export const HeroSection: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackTikTokEvent("Contact")}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base sm:text-lg font-black text-stone-950 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 rounded-xl hover:from-yellow-300 hover:to-amber-300 active:scale-[0.98] transition-all shadow-xl shadow-amber-500/30 group tracking-wide uppercase cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base sm:text-lg font-black text-stone-950 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 rounded-xl hover:from-yellow-300 hover:to-amber-300 active:scale-[0.98] transition-all shadow-xl shadow-amber-500/35 group tracking-wide uppercase cursor-pointer"
               >
                 <MessageCircle className="w-5 h-5 text-stone-950 fill-stone-950/20 group-hover:scale-110 transition-transform" />
                 <span>JOIN THE MASTERCLASS NOW</span>
@@ -109,7 +141,7 @@ export const HeroSection: React.FC = () => {
           <div className="lg:col-span-5 flex flex-col items-center">
             <HeroVideoPlayer />
             
-            <div className="mt-4 flex items-center justify-center gap-4 text-xs text-amber-200/60">
+            <div className="mt-4 flex items-center justify-center gap-4 text-xs text-amber-200/70">
               <span className="flex items-center gap-1.5">
                 <Smartphone className="w-4 h-4 text-amber-400" />
                 <span>Runs on Android & iPhone</span>
@@ -123,6 +155,35 @@ export const HeroSection: React.FC = () => {
           </div>
 
         </div>
+
+        {/* 4-Metric Trust Bar (Full-width row below hero split per constitution) */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 sm:p-6 rounded-2xl bg-[#160E09] border border-amber-900/40 shadow-xl">
+          {trustMetrics.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div 
+                key={index}
+                className="flex items-center gap-3.5 p-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-amber-950/80 border border-amber-600/30 flex items-center justify-center text-yellow-400 shrink-0">
+                  <Icon className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="text-xs text-amber-300 font-bold uppercase tracking-wider">
+                    {item.label}
+                  </div>
+                  <div className="text-sm font-bold text-white">
+                    {item.value}
+                  </div>
+                  <div className="text-[11px] text-amber-200/60 hidden sm:block">
+                    {item.detail}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
       </div>
     </section>
   );

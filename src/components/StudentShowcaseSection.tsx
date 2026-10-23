@@ -3,17 +3,12 @@ import { useMasterclass } from "../context/MasterclassContext";
 import { TestimonialMediaPlaceholder } from "../config/courseConfig";
 import { 
   Play, 
-  Upload, 
   Image as ImageIcon, 
   Video, 
   MessageSquare, 
-  Plus, 
-  RotateCcw,
   Maximize2,
   X,
-  FileCheck,
   CheckCircle,
-  ShieldCheck,
   ChevronLeft,
   ChevronRight,
   ExternalLink,
@@ -23,21 +18,12 @@ import {
 export const StudentShowcaseSection: React.FC = () => {
   const { 
     testimonials, 
-    uploadTestimonialMedia, 
-    addTestimonialItem, 
-    resetTestimonials,
-    getClickableWhatsAppUrl
+    getClickableWhatsAppUrl, 
+    trackTikTokEvent 
   } = useMasterclass();
 
   const [activeTab, setActiveTab] = useState<"all" | "videos" | "chat" | "projects">("all");
   const [activeModalMedia, setActiveModalMedia] = useState<TestimonialMediaPlaceholder | null>(null);
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
-
-  // Form state for adding new testimonial
-  const [newLabel, setNewLabel] = useState("");
-  const [newCaption, setNewCaption] = useState("");
-  const [newType, setNewType] = useState<"video" | "screenshot" | "photo">("video");
-  const [newFile, setNewFile] = useState<File | null>(null);
 
   // Filtered list
   const filteredTestimonials = testimonials.filter((item) => {
@@ -47,35 +33,6 @@ export const StudentShowcaseSection: React.FC = () => {
     if (activeTab === "projects") return item.category === "student_project" && item.type !== "video";
     return true;
   });
-
-  const handleFileUpload = (id: string, e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      uploadTestimonialMedia(id, e.target.files[0]);
-    }
-  };
-
-  const handleAddNewSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!newLabel) return;
-    let previewUrl: string | undefined = undefined;
-    if (newFile) {
-      previewUrl = URL.createObjectURL(newFile);
-    }
-    addTestimonialItem({
-      type: newType,
-      category: newType === "video" ? "student_project" : newType === "screenshot" ? "chat_proof" : "student_photo",
-      label: newLabel,
-      caption: newCaption || "Genuine student content added by course instructor.",
-      authorLabel: "Instructor Added Proof",
-      previewUrl,
-      accentColor: "from-amber-500/30 to-yellow-500/30",
-      badge: "New Proof"
-    });
-    setNewLabel("");
-    setNewCaption("");
-    setNewFile(null);
-    setIsAddModalOpen(false);
-  };
 
   // Lightbox navigation
   const openNextModal = () => {
@@ -120,26 +77,6 @@ export const StudentShowcaseSection: React.FC = () => {
             Discover the creative possibilities of AI video creation. Explore student feedback, video projects, and examples of what learners have created through the class.
           </p>
 
-          {/* Privacy & Authenticity Assurance Banner */}
-          <div className="p-3.5 rounded-xl bg-[#1C140E] border border-amber-600/30 max-w-2xl mx-auto text-xs text-amber-200/90 flex flex-col sm:flex-row items-center justify-between gap-3 text-left shadow-lg">
-            <div className="flex items-center gap-2.5">
-              <ShieldCheck className="w-5 h-5 text-yellow-400 shrink-0" />
-              <div>
-                <strong className="text-amber-300">100% Verified Student Testimonials</strong>
-                <p className="text-[11px] text-amber-200/70">
-                  Phone numbers are blurred to respect students' personal privacy while showing real WhatsApp feedback and results.
-                </p>
-              </div>
-            </div>
-            <button
-              type="button"
-              onClick={() => setIsAddModalOpen(true)}
-              className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-bold bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-stone-950 rounded-lg whitespace-nowrap cursor-pointer transition-colors shadow-sm shrink-0"
-            >
-              <Plus className="w-3.5 h-3.5" />
-              <span>Add Proof</span>
-            </button>
-          </div>
         </div>
 
         {/* Filter Tabs */}
@@ -261,18 +198,6 @@ export const StudentShowcaseSection: React.FC = () => {
                     {item.badge}
                   </div>
                 )}
-
-                {/* Upload overlay button for instructor */}
-                <label className="absolute top-3 right-3 px-2 py-1 bg-black/80 hover:bg-black text-amber-200/80 hover:text-yellow-300 rounded-lg text-[10px] font-bold border border-amber-500/20 backdrop-blur-xs flex items-center gap-1 cursor-pointer transition-all z-10 opacity-70 hover:opacity-100">
-                  <Upload className="w-3 h-3 text-yellow-400" />
-                  <span className="hidden sm:inline">Replace</span>
-                  <input
-                    type="file"
-                    className="hidden"
-                    accept={item.type === "video" ? "video/*" : "image/*"}
-                    onChange={(e) => handleFileUpload(item.id, e)}
-                  />
-                </label>
               </div>
 
               {/* Card Meta Content */}
@@ -333,23 +258,12 @@ export const StudentShowcaseSection: React.FC = () => {
             href={getClickableWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackTikTokEvent("Contact")}
             className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-stone-950 font-black text-sm uppercase tracking-wider rounded-xl shadow-lg shadow-amber-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
           >
             <span>JOIN THE MASTERCLASS NOW</span>
             <ExternalLink className="w-4 h-4" />
           </a>
-        </div>
-
-        {/* Reset tool */}
-        <div className="flex items-center justify-center gap-4 text-xs text-amber-200/50">
-          <button
-            type="button"
-            onClick={resetTestimonials}
-            className="hover:text-yellow-300 transition-colors inline-flex items-center gap-1 cursor-pointer"
-          >
-            <RotateCcw className="w-3.5 h-3.5" />
-            <span>Reset Proof Gallery to Default</span>
-          </button>
         </div>
 
       </div>
@@ -432,8 +346,8 @@ export const StudentShowcaseSection: React.FC = () => {
                   {activeModalMedia.caption}
                 </p>
                 <div className="flex items-center gap-2 mt-1 text-[11px] text-amber-200/60">
-                  <ShieldCheck className="w-3.5 h-3.5 text-yellow-400" />
-                  <span>{activeModalMedia.authorLabel} · Phone numbers blurred for privacy</span>
+                  <CheckCircle className="w-3.5 h-3.5 text-yellow-400" />
+                  <span>{activeModalMedia.authorLabel}</span>
                 </div>
               </div>
 
@@ -441,111 +355,13 @@ export const StudentShowcaseSection: React.FC = () => {
                 href={getClickableWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackTikTokEvent("Contact")}
                 className="px-5 py-2.5 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-stone-950 font-black text-xs uppercase tracking-wider rounded-xl shadow-md transition-all cursor-pointer whitespace-nowrap shrink-0 flex items-center gap-1.5"
               >
                 <span>Join Masterclass</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>
-          </div>
-        </div>
-      )}
-
-      {/* Add New Testimonial Modal for Course Instructor */}
-      {isAddModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="w-full max-w-md bg-[#1C140E] border border-amber-500/30 rounded-2xl p-6 shadow-2xl relative">
-            <button
-              type="button"
-              onClick={() => setIsAddModalOpen(false)}
-              className="absolute top-4 right-4 text-amber-300 hover:text-white p-1"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            <h3 className="text-lg font-bold text-white mb-1">Add Student Proof</h3>
-            <p className="text-xs text-amber-200/70 mb-4">
-              Add genuine student screenshots, video reviews, or project outputs.
-            </p>
-
-            <form onSubmit={handleAddNewSubmit} className="space-y-4">
-              <div>
-                <label className="block text-xs font-semibold text-amber-100 mb-1">
-                  Type of Proof
-                </label>
-                <div className="grid grid-cols-3 gap-2">
-                  {(["video", "screenshot", "photo"] as const).map((t) => (
-                    <button
-                      key={t}
-                      type="button"
-                      onClick={() => setNewType(t)}
-                      className={`py-2 text-xs font-bold rounded-lg capitalize border cursor-pointer ${
-                        newType === t
-                          ? "bg-gradient-to-r from-yellow-400 to-amber-500 border-yellow-400 text-stone-950"
-                          : "bg-[#251910] border-amber-900/40 text-amber-200 hover:bg-[#322115]"
-                      }`}
-                    >
-                      {t}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-amber-100 mb-1">
-                  Title / Label
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="e.g. Student Ad: Skin Care Commercial"
-                  value={newLabel}
-                  onChange={(e) => setNewLabel(e.target.value)}
-                  className="w-full px-3 py-2 bg-[#120D0A] border border-amber-800/40 rounded-lg text-sm text-white placeholder-amber-500/50 focus:outline-none focus:border-amber-400"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-amber-100 mb-1">
-                  Caption / Details
-                </label>
-                <textarea
-                  rows={2}
-                  placeholder="Describe the student project or feedback..."
-                  value={newCaption}
-                  onChange={(e) => setNewCaption(e.target.value)}
-                  className="w-full px-3 py-2 bg-[#120D0A] border border-amber-800/40 rounded-lg text-sm text-white placeholder-amber-500/50 focus:outline-none focus:border-amber-400"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-amber-100 mb-1">
-                  Upload Media File
-                </label>
-                <input
-                  type="file"
-                  accept={newType === "video" ? "video/*" : "image/*"}
-                  onChange={(e) => setNewFile(e.target.files?.[0] || null)}
-                  className="w-full text-xs text-amber-200 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-yellow-400 file:text-stone-950 hover:file:bg-yellow-300 cursor-pointer"
-                />
-              </div>
-
-              <div className="pt-2 flex justify-end gap-2">
-                <button
-                  type="button"
-                  onClick={() => setIsAddModalOpen(false)}
-                  className="px-4 py-2 text-xs font-medium text-amber-200 hover:text-white rounded-lg bg-white/5"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="px-4 py-2 text-xs font-bold text-stone-950 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 rounded-lg shadow-md uppercase tracking-wider"
-                >
-                  Add to Gallery
-                </button>
-              </div>
-            </form>
           </div>
         </div>
       )}

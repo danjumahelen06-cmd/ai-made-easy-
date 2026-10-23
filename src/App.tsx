@@ -9,15 +9,15 @@ import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
 import { ProblemStorySection } from "./components/ProblemStorySection";
 import { CurriculumSection } from "./components/CurriculumSection";
-import { BonusesSection } from "./components/BonusesSection";
 import { StudentShowcaseSection } from "./components/StudentShowcaseSection";
-import { WhyJoinSection } from "./components/WhyJoinSection";
+import { BonusesSection } from "./components/BonusesSection";
 import { WhoIsThisForSection } from "./components/WhoIsThisForSection";
+import { HowItWorksSection } from "./components/HowItWorksSection";
+import { WhyJoinSection } from "./components/WhyJoinSection";
 import { OfferSection } from "./components/OfferSection";
 import { FaqSection } from "./components/FaqSection";
 import { FinalSection } from "./components/FinalSection";
 import { MobileStickyBar } from "./components/MobileStickyBar";
-import { WhatsAppConfigModal } from "./components/WhatsAppConfigModal";
 import { CheckCircle } from "lucide-react";
 
 const ToastNotification: React.FC = () => {
@@ -34,22 +34,22 @@ const ToastNotification: React.FC = () => {
 
 const MainContent: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#120D0A] text-[#FDF8F3] flex flex-col selection:bg-amber-400 selection:text-stone-950 pb-14 md:pb-0">
+    <div className="min-h-screen bg-[#120D0A] text-[#FDF8F3] flex flex-col selection:bg-amber-400 selection:text-stone-950 pb-16 md:pb-0">
       <Navbar />
       <main className="flex-1">
         <HeroSection />
         <ProblemStorySection />
         <CurriculumSection />
-        <BonusesSection />
         <StudentShowcaseSection />
-        <WhyJoinSection />
+        <BonusesSection />
         <WhoIsThisForSection />
+        <HowItWorksSection />
+        <WhyJoinSection />
         <OfferSection />
         <FaqSection />
         <FinalSection />
       </main>
       <MobileStickyBar />
-      <WhatsAppConfigModal />
       <ToastNotification />
     </div>
   );

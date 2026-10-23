@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 export const OfferSection: React.FC = () => {
-  const { getClickableWhatsAppUrl } = useMasterclass();
+  const { getClickableWhatsAppUrl, trackTikTokEvent } = useMasterclass();
 
   const inclusions = [
     "Complete AI video creation lessons.",
@@ -79,6 +79,7 @@ export const OfferSection: React.FC = () => {
               href={getClickableWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackTikTokEvent("Contact")}
               className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-black text-stone-950 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 rounded-xl hover:from-yellow-300 hover:to-amber-300 active:scale-[0.98] transition-all shadow-xl shadow-amber-500/35 group tracking-wide uppercase cursor-pointer"
             >
               <MessageCircle className="w-5 h-5 text-stone-950 fill-stone-950/20 group-hover:scale-110 transition-transform" />

@@ -4,7 +4,7 @@ import { useMasterclass } from "../context/MasterclassContext";
 import { ChevronDown, MessageCircle, HelpCircle } from "lucide-react";
 
 export const FaqSection: React.FC = () => {
-  const { getClickableWhatsAppUrl } = useMasterclass();
+  const { getClickableWhatsAppUrl, trackTikTokEvent } = useMasterclass();
   const [openIds, setOpenIds] = useState<number[]>([1, 2]); // Open first two by default
 
   const toggleFaq = (id: number) => {
@@ -66,6 +66,7 @@ export const FaqSection: React.FC = () => {
                           href={getClickableWhatsAppUrl()}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={() => trackTikTokEvent("Contact")}
                           className="inline-flex items-center gap-2 text-xs font-bold text-yellow-400 hover:text-yellow-300 underline underline-offset-4"
                         >
                           <MessageCircle className="w-4 h-4" />
@@ -90,6 +91,7 @@ export const FaqSection: React.FC = () => {
             href={getClickableWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackTikTokEvent("Contact")}
             className="px-5 py-2.5 text-xs font-black text-stone-950 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 rounded-xl transition-all shadow-md flex items-center gap-2 shrink-0 whitespace-nowrap uppercase tracking-wider"
           >
             <MessageCircle className="w-4 h-4" />
